@@ -35,7 +35,7 @@ public class AndroidShellModule extends ReactContextBaseJavaModule {
                 InputStream in = null; 
                 try { 
                     // Send script into runtime process 
-                    Process child = Runtime.getRuntime().exec(command);
+                    Process child = Runtime.getRuntime().exec(new String[]{"su", "-c", command});
                     // Get input and output streams 
                     out = child.getOutputStream(); 
                     in = child.getInputStream();
